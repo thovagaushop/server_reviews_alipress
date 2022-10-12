@@ -7,7 +7,7 @@ const express = require('express')
 dotenv.config()
 
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors())
@@ -24,6 +24,6 @@ app.post('/reviews',async (req, res, next) => {
     }
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
 })
